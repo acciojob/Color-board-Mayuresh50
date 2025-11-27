@@ -1,23 +1,21 @@
-/*  your css code here. If applicable */
-body {
-    background: #111;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body{
+	background-color:black;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin:0;
+	height:100vh;
+}
+.container{
+	display:grid;
+	grid-template-columns:repeat(40,1fr);
+	gap:2px;
+	width:600px
 }
 
-.container {
-    width: 520px;
-    display: flex;
-    flex-wrap: wrap;
+.square{
+	width:15px;
+	height:15px;
+	background-color:rgb(29,29,29);
+	transition:background 1s ease;
 }
-
-.square {
-    width: 20px;
-    height: 20px;
-    background: #1d1d1d;
-    margin: 2px;
-    transition: background 1s ease;   /* smooth fade-out */
-}
-

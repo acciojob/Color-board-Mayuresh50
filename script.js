@@ -1,27 +1,18 @@
 //your JS code here. If required.
-const container = document.querySelector(".container");
-const BOXES = 800;
+const board = document.querySelector("#board");
+const squares=800;
+for(let i=0;i<squares;i++){
+	const square=document.createElement("div");
+	square.classList.add("square");
 
-for (let i = 0; i < BOXES; i++) {
-    const square = document.createElement("div");
-    square.classList.add("square");
 
-    square.addEventListener("mouseover", () => setColor(square));
-    square.addEventListener("mouseout", () => removeColor(square));
+	square.addEventListener("mouseover",()=>{
+		const color="red";
+		square.style.background=color;
 
-    container.appendChild(square);
-}
-
-function setColor(square) {
-    const color = randomColor();
-    square.style.background = color;
-}
-
-function removeColor(square) {
-    square.style.background = "#1d1d1d";
-}
-
-function randomColor() {
-    const colors = ["#e74c3c", "#3498db", "#9b59b6", "#1abc9c", "#f39c12", "#2ecc71"];
-    return colors[Math.floor(Math.random() * colors.length)];
+		setTimeout(()=>{
+			square.style.backgroundColor="rgb(29,29,29)";
+		},1000)
+	})
+	board.appendChild(square)
 }
